@@ -1,0 +1,45 @@
+---
+title: "Quarto Customization"
+format: html
+execute: 
+  warning: false
+---
+
+Suppressing warnings and messages just for this code chunk.
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)
+```
+
+Running code, but not showing output.
+
+```{r}
+#| include: false
+#return first 6 lines of starwars data
+
+head(starwars)
+
+#return dimensions of the starwars data
+dim(starwars)
+```
+
+Showing output, but not code.
+
+```{r}
+
+#| warning: false 
+#| include: false
+ggplot(data = starwars, aes(x = height, y = mass, color = mass))+ 
+  geom_point()+ 
+  labs( x = "Height (cm)", 
+        y = "Mass (g)")
+          
+```
+
+```{r}
+#| warning: false
+ggplot(data = starwars, aes(x = height)) + 
+  geom_histogram(color = "red", fill = "purple")
+```
