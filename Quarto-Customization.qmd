@@ -40,6 +40,22 @@ ggplot(data = starwars, aes(x = height, y = mass, color = mass))+
 
 ```{r}
 #| warning: false
+#| fig-cap: "caption text"
+#| fig-alt: "figure alt text"
 ggplot(data = starwars, aes(x = height)) + 
   geom_histogram(color = "red", fill = "purple")
 ```
+
+Find summary stats for Star Wars characters
+
+```{r}
+# remove NAs from data
+
+sw_height_mean <- mean(starwars$height, na.rm = TRUE)
+sw_height_median <- median(starwars$height, na.rm = TRUE)
+sw_height_var <- var(starwars$height, na.rm = TRUE)
+sw_height_sd <- sd(starwars$height, na.rm = TRUE)
+
+```
+
+The mean height of the characters in Starwars is `r round(sw_height_mean, 1)` centimeters.

@@ -121,13 +121,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> starwars, <span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">fill =</span> <span class="st">"purple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Quarto-Customization_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Quarto-Customization_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="figure alt text" width="672"></p>
+<figcaption>caption text</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>Find summary stats for Star Wars characters</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove NAs from data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sw_height_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sw_height_median <span class="ot">&lt;-</span> <span class="fu">median</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sw_height_var <span class="ot">&lt;-</span> <span class="fu">var</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>sw_height_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The mean height of the characters in Starwars is 174.6 centimeters.</p>
 
 </main>
 <!-- /main column -->
